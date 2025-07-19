@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Gerador de Senhas</title></head>
+<body style="font-family:sans-serif;text-align:center;padding:20px">
+    <h1>Gerador de Senhas Seguras</h1>
+    <button onclick="generatePassword()">Gerar Senha</button><br><br>
+    <input type="text" id="senha" readonly style="width:80%"/>
+    <script>
+    function generatePassword() {
+        const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*";
+        let pass = "";
+        for (let i = 0; i < 14; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
+        document.getElementById("senha").value = pass;
+    }
+    </script>
+</body></html>

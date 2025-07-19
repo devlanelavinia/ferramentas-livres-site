@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Arquivos</title>
+    <style>
+        body { font-family: sans-serif; background: #f7f6f2; color: #2e4c41; text-align: center; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        h1 { font-size: 1.8em; }
+        input, button { margin-top: 10px; padding: 10px; width: 90%; max-width: 400px; }
+        .email-section { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo_ferramentaslivres_300px.png" alt="Ferramentas Livres" width="100" />
+        <h1>Conversor de Arquivos para EPUB, PDF e Mais</h1>
+        <p>Envie seu arquivo (PDF, TXT, DOCX, etc.) e baixe convertido.</p>
+        <input type="file" id="fileInput" />
+        <br />
+        <button onclick="convertFile()">Converter Arquivo</button>
+
+        <div class="email-section">
+            <h2>Enviar para o Kindle</h2>
+            <p>Copie seu e-mail Kindle e envie manualmente o arquivo convertido.</p>
+            <input type="text" value="seuusuario@kindle.com" id="kindleEmail" readonly />
+            <br />
+            <button onclick="copyKindle()">Copiar e-mail Kindle</button>
+        </div>
+    </div>
+
+    <script>
+        function convertFile() {
+            alert("Simulação: arquivo convertido. Aqui seria feita a conversão real via backend.");
+        }
+        function copyKindle() {
+            const emailInput = document.getElementById("kindleEmail");
+            emailInput.select();
+            emailInput.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("E-mail Kindle copiado!");
+        }
+    </script>
+</body>
+</html>

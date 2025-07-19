@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Compressor de Imagem</title></head>
+<body style="font-family:sans-serif;text-align:center;padding:20px">
+    <h1>Comprimir Imagem</h1>
+    <input type="file" id="imgInput" accept="image/*"><br><br>
+    <button onclick="compress()">Comprimir</button><br><br>
+    <canvas id="canvas" style="display:none;"></canvas><br>
+    <a id="downloadLink" style="display:none;">Baixar Imagem</a>
+    <script>
+    function compress() {
+        const file = document.getElementById("imgInput").files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.getElementById("canvas");
+                const ctx = canvas.getContext("2d");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                const compressed = canvas.toDataURL("image/jpeg", 0.5);
+                document.getElementById("downloadLink").href = compressed;
+                document.getElementById("downloadLink").download = "comprimida.jpg";
+                document.getElementById("downloadLink").style.display = "inline";
+                document.getElementById("downloadLink").textContent = "Baixar Imagem Comprimida";
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+    </script>
+</body></html>
