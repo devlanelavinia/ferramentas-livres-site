@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas Livres</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        header {
+            padding: 2rem 1rem 1rem;
+        }
+        header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.25rem;
+        }
+        h2 {
+            font-weight: normal;
+            font-size: 1rem;
+            color: #666;
+        }
+        .tools {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem 1rem;
+            width: 100%;
+        }
+        .tool {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .tool:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        footer {
+            margin: 2rem 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_ferramentaslivres_300px.png" alt="Logo Ferramentas Livres">
+        <h1>Ferramentas</h1>
+        <h2>Livres</h2>
+    </header>
+
+    <div class="tools">
+        <a href="conversor-texto.html" class="tool">📝 Conversor de Texto</a>
+        <a href="gerador-qrcode.html" class="tool">🔲 Gerador de QR Code</a>
+        <a href="gerador-senhas.html" class="tool">🔐 Gerador de Senhas</a>
+        <a href="enviar-kindle.html" class="tool">📤 Enviar para Kindle (EPUB)</a>
+        <a href="doacao.html" class="tool">💖 Apoie via Pix</a>
+    </div>
+
+    <footer>
+        Feito com simplicidade ✨ – ferramentaslivres.com.br
+    </footer>
+</body>
+</html>
